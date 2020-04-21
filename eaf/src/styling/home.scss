@@ -1,3 +1,37 @@
 #home {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    margin-top: 100px;
+    opacity: 0.95;
+    width: 350px;
+    justify-content: center;
+  }
+
+  a {
+    width: 225px;
+    margin-top: 75px;
+    padding: 15px;
+    background: rgba(92, 187, 51, 0.781);
+    border: none;
+    font-family: "MicroSquare";
+    color: white;
+    border-radius: 5px;
+    letter-spacing: 1.8px;
+    font-size: 1.1em;
+    border: solid rgba(95, 194, 65, 0.479) 2px;
+    transition: 0.5s;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  a:hover {
+    cursor: pointer;
+    background: rgba(51, 155, 187, 0.781);
+    transition: 0.5s;
+    outline: none;
+  }
 }
