@@ -1,18 +1,84 @@
-.navBar {
+.navBarHome {
   margin: 0 auto;
   width: 100%;
-  display: flex;
-  justify-content: center;
   top: 0;
   padding: 25px;
+  padding-top: 35px;
   font-family: "MicroSquare";
+  transition: 0.5s;
+  width: 100%;
+  z-index: 1;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
 
-  a {
-    margin: 0 25px;
-    text-decoration: none;
-    color: white;
-    font-size: 1.3em;
-    letter-spacing: 1.8px;
-    font-family: "MicroSquare";
+  .showLogo {
+    margin-left: 40px;
+    width: 75px;
+    transition: 0.5s;
+    opacity: 0.5;
+  }
+
+  .links {
+    margin-right: 100px;
+    margin-bottom: 8px;
+    a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      letter-spacing: 2px;
+      padding: 10px;
+      margin: 10px 20px;
+      position: relative;
+      display: inline-block;
+      font-size: 1.2em;
+      transition: 0.5s;
+    }
+
+    a:after {
+      position: absolute;
+      left: 50%;
+      content: "";
+      height: 1px;
+      background: rgba(255, 255, 255, 0.801);
+      transition: all 0.2s linear;
+      width: 0;
+      bottom: -3px;
+    }
+
+    a:hover:after {
+      width: 100%;
+      left: 0px;
+    }
+  }
+}
+
+.movingNav {
+  background: rgba(255, 255, 255, 0.925);
+  transition: 0.5s;
+
+  .links {
+    display: flex;
+    margin-bottom: 8px;
+
+    a {
+      color: rgb(29, 161, 69);
+      background-color: none;
+      transition: 0.5s;
+    }
+
+    a:hover {
+      color: white;
+      background-color: rgba(13, 141, 51, 0.637);
+      border-radius: 5px;
+    }
+  }
+
+  .showLogo {
+    margin-left: 75px;
+    width: 75px;
+    opacity: 1;
+    transition: 0.5s;
   }
 }
