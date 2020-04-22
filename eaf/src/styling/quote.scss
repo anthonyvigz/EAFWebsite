@@ -1,75 +1,77 @@
 #quote {
+  background: rgb(255, 211, 130);
   height: 100vh;
-  background-image: url("../img/deckbg.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  width: 100%;
-  height: 100vh;
-  -webkit-background-size: cover;
-  background-size: cover;
-  margin-bottom: 0;
+  margin-top: 200px;
 
   .quoteBlock {
-    background: rgba(2, 90, 6, 0.815);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    width: 100%;
-    height: 100vh;
-    -webkit-background-size: cover;
-    background-size: cover;
-    margin-bottom: 0;
+    justify-content: center;
+    display: flex;
+    background: repeating-linear-gradient(
+      135deg,
+      #21252907,
+      #21252905 5px,
+      rgba(87, 44, 10, 0.007) 5px,
+      rgba(0, 0, 0, 0) 10px
+    );
+    height: 100%;
 
-    .quoteForm {
-      background-color: rgba(0, 140, 255, 0.329);
-      margin: 0 auto;
-      width: 500px;
+    .textQuoteBlock {
+      background-color: rgb(255, 255, 255);
+      box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.151);
+      width: 400px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 15px 0;
-      border-radius: 10px;
-      margin-bottom: 50px;
+      height: 450px;
+      margin: 50px;
+    }
+
+    .quoteForm {
+      background-color: rgb(255, 255, 255);
+      box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.137);
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 450px;
+      margin: 50px;
 
       input {
-        width: 50%;
+        width: 80%;
         margin-bottom: 20px;
-        padding: 10px;
+        padding: 15px;
         background: transparent;
-        color: rgba(0, 140, 255, 0.76);
-        border: none;
-        border-bottom: solid rgba(0, 140, 255, 0.76) 1px;
+        color: #434e62;
+        border: solid #434e62 1px;
         opacity: 0.9;
         outline: none;
         font-family: "Poppins", sans-serif;
       }
 
       input::placeholder {
-        color: rgba(0, 140, 255, 0.76);
+        color: #434e62;
         font-family: "Poppins", sans-serif;
         transition: 0.8s;
       }
 
       input:hover::-webkit-input-placeholder {
-        color: rgba(146, 146, 146, 0.322);
+        color: #434e62;
         font-size: 0.5em;
         transition: 0.8s;
       }
 
       textarea {
+        width: 80%;
         margin-bottom: 20px;
-        padding: 10px;
+        padding: 15px;
         background: transparent;
-        color: rgba(0, 81, 255, 0.822);
-        border: none;
-        border-bottom: solid rgba(0, 140, 255, 0.76) 1px;
+        color: #434e62;
+        border: solid #434e62 1px;
         opacity: 0.9;
         outline: none;
-        resize: none;
         font-family: "Poppins", sans-serif;
-        width: 80%;
       }
 
       button {
@@ -78,7 +80,7 @@
         font-size: 1.2em;
         border: white 1px solid;
         border-radius: 5px;
-        background: rgba(0, 140, 255, 0.562);
+        background: #434e62;
         transition: 1s;
         font-family: "Poppins", sans-serif;
       }
@@ -92,7 +94,7 @@
       font-size: 2em;
       color: white;
       position: absolute;
-      left: 50%;
+      left: 10%;
       transform: translateX(-50%);
       margin-top: 50px;
       display: flex;

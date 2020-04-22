@@ -1,30 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styling/quote.scss";
 import * as emailjs from "emailjs-com";
 
 export default function Quote() {
+  const [quote, setQuote] = useState({
+    name: "",
+    email: "",
+    number: "",
+    message: "",
+  });
+
   const changeHandler = (event) => {
     event.preventDefault();
 
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
+    setQuote({ ...quote, [event.target.name]: event.target.value });
   };
 
   const sendQuoteRequest = (event) => {
     event.preventDefault();
 
-    const { name, email, message } = this.state;
+    const { name, email, number, message } = quote;
 
     let templateParams = {
       name: name,
+      number: number,
       message: message,
       email: email,
     };
 
     let popup = document.getElementById("popUp");
 
-    if (name && message && email) {
+    if (name && message && email && number) {
       emailjs
         .send(
           "gmail",
@@ -61,31 +67,39 @@ export default function Quote() {
         <div id="popUp" style={{ opacity: "0" }}>
           Sent!
         </div>
+        <div className="textQuoteBlock"></div>
         <form onSubmit={sendQuoteRequest} className="quoteForm">
           <input
             onChange={changeHandler}
-            value="placeholder"
+            value={quote.name}
             name="name"
             type="text"
             placeholder="Name"
           ></input>
           <input
             onChange={changeHandler}
-            value="placeholder"
+            value={quote.email}
             name="email"
             type="text"
             placeholder="E-mail"
           ></input>
+          <input
+            onChange={changeHandler}
+            value={quote.number}
+            name="number"
+            type="text"
+            placeholder="Phone Number"
+          ></input>
           <textarea
             onChange={changeHandler}
-            value="placeholder"
+            value={quote.message}
             name="message"
             type="text"
-            placeholder="Your message"
+            placeholder="Message"
             rows="4"
             cols="50"
           ></textarea>
-          <button type="submit">Submit</button>
+          <button type="submit">Get Your Quote!</button>
         </form>
       </div>
     </div>

@@ -1,81 +1,94 @@
-#reviews {
-  height: 500px;
+.reviewsBg {
   background-color: rgb(29, 116, 138);
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 100%;
-  padding-bottom: 50px;
-
-  h2 {
-    font-family: "MicroSquare";
-    color: rgba(255, 255, 255, 0.829);
-    text-align: left;
-    margin-left: 125px;
-    margin-top: 25px;
-    margin-bottom: 0;
-  }
-
-  .reviewBlocks {
+  #reviews {
+    height: 500px;
+    background-color: rgb(29, 116, 138);
+    background: repeating-linear-gradient(
+      135deg,
+      #21252907,
+      #21252905 5px,
+      rgba(87, 44, 10, 0.007) 5px,
+      rgba(0, 0, 0, 0) 10px
+    );
+    height: 100%;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: 50px;
+    border-top: solid rgba(155, 178, 184, 0.801) 7px;
+    border-bottom: solid rgba(155, 178, 184, 0.801) 7px;
 
-    .wholeReview {
+    h2 {
+      font-family: "MicroSquare";
+      color: rgba(255, 255, 255, 0.829);
+      text-align: left;
+      margin-left: 125px;
+      margin-top: 25px;
+      margin-bottom: 0;
+    }
+
+    .reviewBlocks {
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex-wrap: wrap;
       justify-content: center;
 
-      .reviewBlock {
-        width: 280px;
-        height: 280px;
-        border: solid rgba(255, 255, 255, 0.788) 3px;
-        border-radius: 3px;
-        margin: 35px;
-        position: relative;
+      .wholeReview {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
 
-        i {
-          color: rgba(255, 255, 255, 0.493);
-          font-size: 2.6em;
+        .reviewBlock {
+          width: 280px;
+          height: 280px;
+          border: solid rgba(255, 255, 255, 0.788) 3px;
+          border-radius: 3px;
+          margin: 35px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          i {
+            color: rgba(255, 255, 255, 0.493);
+            font-size: 2.6em;
+          }
+
+          .topLeft {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+          }
+
+          .bottomRight {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+          }
+
+          p {
+            text-align: center;
+            color: white;
+            letter-spacing: 1.3px;
+            font-size: 1em;
+            padding: 10px;
+          }
         }
 
-        .topLeft {
-          position: absolute;
-          top: 15px;
-          left: 15px;
-        }
-
-        .bottomRight {
-          position: absolute;
-          bottom: 15px;
-          right: 15px;
-        }
-
-        p {
-          text-align: center;
+        h3 {
+          font-family: "MicroSquare";
+          font-size: 1.4em;
           color: white;
-          letter-spacing: 1.3px;
-          font-size: 1em;
-          padding: 10px;
+          margin-top: -10px;
         }
-      }
 
-      h3 {
-        font-family: "MicroSquare";
-        font-size: 1.4em;
-        color: white;
-        margin-top: -10px;
-      }
-
-      .fiveStars {
-        margin-top: -15px;
-        i {
-          color: rgb(255, 227, 104);
-          margin: 1px;
+        .fiveStars {
+          margin-top: -15px;
+          i {
+            color: rgb(255, 227, 104);
+            margin: 1px;
+          }
         }
       }
     }
