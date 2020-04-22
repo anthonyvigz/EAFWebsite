@@ -1,0 +1,61 @@
+#services {
+  margin: 25px auto;
+  padding-top: 75px;
+
+  .serviceBlocks {
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 0;
+
+    .serviceBlock {
+      width: 275px;
+      background: none;
+      color: white;
+      background: rgba(29, 116, 138, 0.733);
+      border: solid rgba(255, 255, 255, 0.712) 2px;
+      border-radius: 5px;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 25px;
+      padding: 0;
+      transition: 0.5s;
+
+      h1 {
+        font-family: "MicroSquare";
+        font-size: 2em;
+      }
+
+      p {
+        margin-top: -18px;
+        text-align: center;
+        line-height: 25px;
+        padding: 10px;
+      }
+
+      i {
+        margin-top: 25px;
+        color: white;
+        font-size: 3.6em;
+        transition: 0.5s;
+      }
+    }
+
+    .serviceBlock:hover {
+      border-top: solid white 6px;
+      transition: 0.5s;
+      cursor: pointer;
+      margin-bottom: -6px;
+
+      i {
+        color: rgb(146, 251, 146);
+        transition: 0.5s;
+      }
+    }
+  }
+}
