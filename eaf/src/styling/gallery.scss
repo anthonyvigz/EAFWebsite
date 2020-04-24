@@ -1,3 +1,91 @@
 #gallery {
   height: 100vh;
+  .sliderBg {
+    border: solid rgba(6, 102, 19, 0.712) 5px;
+    height: 400px;
+    position: relative;
+
+    .slider {
+      width: 600px;
+      height: 400px;
+      box-sizing: border-box;
+      margin: 0 auto;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      .slide {
+        height: 100%;
+        transition: 0.5s;
+        min-width: 100%;
+
+        img {
+          max-width: 100%;
+          min-width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    #goLeft:hover {
+      background: rgba(0, 0, 0, 0.363);
+      transition: 0.5s;
+      cursor: pointer;
+
+      i {
+        color: rgba(255, 255, 255, 0.685);
+      }
+    }
+
+    #goRight:hover {
+      background: rgba(0, 0, 0, 0.322);
+      transition: 0.5s;
+      cursor: pointer;
+
+      i {
+        color: rgba(255, 255, 255, 0.685);
+      }
+    }
+
+    button {
+      i {
+        color: rgba(255, 255, 255, 0.418);
+        text-align: center;
+        font-size: 3.5em;
+      }
+    }
+
+    #goLeft {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      left: 0;
+      width: 34%;
+      height: 100%;
+      transform: translateX(-10%);
+      top: 0;
+      border: none;
+      outline: none;
+      background: rgba(0, 0, 0, 0.37);
+      transition: 0.5s;
+    }
+
+    #goRight {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      right: 0;
+      top: 0;
+      border: none;
+      transform: translateX(10%);
+      outline: none;
+      width: 34%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.356);
+      transition: 0.5s;
+    }
+  }
 }

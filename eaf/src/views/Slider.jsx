@@ -1,36 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styling/slider.scss";
-import a from "../img/test/1.jpg";
-import b from "../img/test/2.jpg";
-import c from "../img/test/3.jpg";
-import d from "../img/test/4.jpg";
-import e from "../img/test/5.png";
+import axios from "axios";
+import "../styling/gallery.scss";
 
 export default function Slider() {
-  let sliderArr = [a, b, c, d, e];
+  const [images, setImages] = useState([]);
+
+  // gets all images
+  useEffect(() => {
+    axios
+      .get("https://touch-base-server.herokuapp.com/eaf/get")
+      .then((res) => {
+        setImages(res.data.resources);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   const [x, setX] = useState(-100);
 
   const goLeft = () => {
     setX(x + 100);
-    x === 0 ? setX(-100 * (sliderArr.length - 1)) : setX(x + 100);
+    x === 0 ? setX(-100 * (images.length - 1)) : setX(x + 100);
   };
 
   const goRight = () => {
-    console.log(x);
-    console.log(sliderArr.length);
-    x === -100 * (sliderArr.length - 1) ? setX(0) : setX(x - 100);
+    console.log(images.length);
+    x === -100 * (images.length - 1) ? setX(0) : setX(x - 100);
   };
 
   return (
-    <div className="slider">
-      {sliderArr.map((item, index) => {
-        return (
-          <div className="slide" style={{ transform: `translateX(${x}%)` }}>
-            <img src={item} alt="img" key={index} />
-          </div>
-        );
-      })}
+    <div className="sliderBg">
+      <div className="slider">
+        {images.map((image, index) => {
+          return (
+            <div className="slide" style={{ transform: `translateX(${x}%)` }}>
+              <img src={image.secure_url} alt="img" key={index} />
+            </div>
+          );
+        })}
+      </div>
       <button id="goLeft" onClick={goLeft}>
         <i className="fas fa-chevron-left"></i>
       </button>
