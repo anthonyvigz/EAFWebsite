@@ -1,66 +1,69 @@
 import React, { useState, useEffect } from "react";
 import Slider from "./Slider";
 import "../styling/gallery.scss";
-import firebase from "firebase";
-import Images from "./Images";
+import axios from "axios";
 
 export default function Gallery() {
-  var firebaseConfig = {
-    apiKey: "AIzaSyD6Gcgw208X0jQXohM7rPrEUXeGcAMIp9g",
-    authDomain: "eaf-decks.firebaseapp.com",
-    databaseURL: "https://eaf-decks.firebaseio.com",
-    projectId: "eaf-decks",
-    storageBucket: "eaf-decks.appspot.com",
-    messagingSenderId: "60992671312",
-    appId: "1:60992671312:web:861fcdc34f1fe25187cb55",
-    measurementId: "G-6T5VX64PVP",
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+  const [image, setImage] = useState("");
+  const [images, setImages] = useState([]);
+  const [loading, setLoading] = useState(false);
 
+  // gets all images
   useEffect(() => {
-    var uploader = document.getElementById("uploader");
-    var fButton = document.getElementById("fileButton");
-    fButton.addEventListener("change", function (event) {
-      //Get file
-      const file = event.target.files[0];
+    axios
+      .get("https://touch-base-server.herokuapp.com/eaf/get")
+      .then((res) => {
+        setImages(res.data.resources);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [loading]);
 
-      //Create storage ref
-      const storageRef = firebase.storage().ref("eaf_image/" + file.name);
+  // function to upload image
+  const imgUploadHandler = (event) => {
+    event.preventDefault();
 
-      //Upload
-      const task = storageRef.put(file);
+    const files = event.target.files;
+    const data = new FormData();
 
-      //Update progress
-      task.on(
-        "state_changed",
-        function progress(snapshot) {
-          const percentage =
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          uploader.value = percentage;
-        },
-        function error(err) {
-          console.log(err);
-        },
-        function complete() {
-          console.log("Complete!");
-          uploader.value = 0;
-          console.log(storageRef.child("eaf_image/").listAll());
-        }
-      );
-    });
-  }, []);
+    data.append("file", files[0]);
+    data.append("upload_preset", "eaf_preset");
+
+    setLoading(true);
+
+    // adds the image to cloudinary
+    axios
+      .post(
+        "https://api.cloudinary.com/v1_1/eaf-custom-decks-and-remodelling/image/upload",
+        data
+      )
+      .then((res) => {
+        console.log("Success", res);
+        setLoading(false);
+        setImage(res.data.secure_url);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div id="gallery">
       <Slider />
 
-      <progress value="0%" max="100" id="uploader">
-        0%
-      </progress>
-      <input type="file" id="fileButton" />
-      <Images />
+      <h1>{loading ? "Uploading..." : ""}</h1>
+      <input
+        id="file-input"
+        onChange={imgUploadHandler}
+        className="uploadImage"
+        type="file"
+      />
+      <div>
+        {images.map((image) => {
+          return <img src={image.secure_url} width="200px" alt="img" />;
+        })}
+      </div>
     </div>
   );
 }
