@@ -6,6 +6,7 @@ import Gallery from "./views/Gallery";
 import Reviews from "./views/Reviews";
 import Quote from "./views/Quote";
 import NavBar from "./views/NavBar";
+import Footer from "./views/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Gallery />
       <Reviews />
       <Quote />
+      <Footer />
     </div>
   );
 }

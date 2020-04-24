@@ -1,0 +1,24 @@
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: #434e62a2;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.609);
+  align-items: center;
+  justify-content: center;
+
+  h5 {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+  }
+
+  h6 {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 10px;
+  }
+}

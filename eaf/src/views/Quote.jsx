@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styling/quote.scss";
 import * as emailjs from "emailjs-com";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default function Quote() {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   const [quote, setQuote] = useState({
     name: "",
     email: "",
@@ -67,8 +73,35 @@ export default function Quote() {
         <div id="popUp" style={{ opacity: "0" }}>
           Sent!
         </div>
-        <div className="textQuoteBlock"></div>
-        <form onSubmit={sendQuoteRequest} className="quoteForm">
+        <div
+          data-aos="flip-right"
+          data-aos-duration="5000"
+          data-aos-easing="ease-in-out"
+          className="textQuoteBlock"
+        >
+          <h1>CONTACT US</h1>
+          <div className="contactBlocks">
+            <div className="contactBar">
+              <i className="fas fa-phone"></i>1 (111) 111-1111
+            </div>
+            <div className="contactBar">
+              <i className="fas fa-at"></i>
+              eafremodelling@eaf.com
+            </div>
+            <div className="contactBar">
+              <i className="fas fa-map-marked-alt"></i>
+              99 Address Ave., 01010 Nashua, NH
+            </div>
+          </div>
+        </div>
+        <form
+          data-aos="flip-left"
+          data-aos-duration="5000"
+          data-aos-easing="ease-in-out"
+          onSubmit={sendQuoteRequest}
+          className="quoteForm"
+        >
+          <h1>REQUEST A QUOTE!</h1>
           <input
             onChange={changeHandler}
             value={quote.name}
@@ -99,7 +132,7 @@ export default function Quote() {
             rows="4"
             cols="50"
           ></textarea>
-          <button type="submit">Get Your Quote!</button>
+          <button type="submit">Submit!</button>
         </form>
       </div>
     </div>
