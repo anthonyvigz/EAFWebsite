@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "../styling/slider.scss";
 import axios from "axios";
 import "../styling/gallery.scss";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default function Slider() {
   const [images, setImages] = useState([]);
@@ -16,6 +18,8 @@ export default function Slider() {
       .catch((err) => {
         console.log(err);
       });
+
+    Aos.init({ duration: 2000 });
   }, []);
 
   const [x, setX] = useState(-100);
@@ -31,7 +35,7 @@ export default function Slider() {
   };
 
   return (
-    <div className="sliderBg">
+    <div data-aos="fade-right" className="sliderBg">
       <div className="slider">
         {images.map((image, index) => {
           return (

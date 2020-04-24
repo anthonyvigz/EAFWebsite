@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styling/reviews.scss";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default function Reviews() {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   return (
     <div className="reviewsBg">
       <div id="reviews">
-        <h2>What our customers think of us:</h2>
-        <div className="reviewBlocks">
+        <h2 data-aos="fade-right">What our customers think of us:</h2>
+        <div data-aos="fade-up" className="reviewBlocks">
           <div className="wholeReview">
             <div className="reviewBlock">
               <i className="fas fa-quote-left topLeft"></i>

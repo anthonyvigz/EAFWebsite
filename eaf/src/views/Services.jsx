@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styling/services.scss";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default function Services() {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   return (
     <div id="services">
       <div className="serviceBlocks" id="services">
-        <div className="serviceBlock">
+        <div
+          data-aos="flip-right"
+          data-aos-duration="5000"
+          data-aos-easing="ease-in-out"
+          className="serviceBlock"
+        >
           <i className="fas fa-hammer"></i>
           <h1>Custom Decks</h1>
           <p>
@@ -13,7 +24,12 @@ export default function Services() {
             space you've always dreamed of.
           </p>
         </div>
-        <div className="serviceBlock">
+        <div
+          data-aos="flip-right"
+          data-aos-duration="5000"
+          data-aos-easing="ease-in-out"
+          className="serviceBlock"
+        >
           <i className="fas fa-crop-alt"></i>
           <h1>Framing</h1>
           <p>
@@ -22,7 +38,12 @@ export default function Services() {
             house.
           </p>
         </div>
-        <div className="serviceBlock">
+        <div
+          data-aos="flip-right"
+          data-aos-duration="5000"
+          data-aos-easing="ease-in-out"
+          className="serviceBlock"
+        >
           <i className="fas fa-pump-soap"></i>
           <h1>Rot</h1>
           <p>
@@ -31,7 +52,12 @@ export default function Services() {
             home.
           </p>
         </div>
-        <div className="serviceBlock">
+        <div
+          data-aos="flip-right"
+          data-aos-duration="5000"
+          data-aos-easing="ease-in-out"
+          className="serviceBlock"
+        >
           <i className="fas fa-house-damage"></i>
           <h1>Gut & Remodel</h1>
           <p>
@@ -39,7 +65,12 @@ export default function Services() {
             makeover.
           </p>
         </div>
-        <div className="serviceBlock">
+        <div
+          data-aos="flip-right"
+          data-aos-duration="5000"
+          data-aos-easing="ease-in-out"
+          className="serviceBlock"
+        >
           <i className="fas fa-warehouse-alt"></i>
           <h1>Shed</h1>
           <p>
@@ -47,7 +78,12 @@ export default function Services() {
             scale; fully customized to your needs.
           </p>
         </div>
-        <div className="serviceBlock">
+        <div
+          data-aos="flip-right"
+          data-aos-duration="5000"
+          data-aos-easing="ease-in-out"
+          className="serviceBlock"
+        >
           <i className="fas fa-window-frame"></i>
           <h1>Windows & Doors</h1>
           <p>
@@ -55,7 +91,12 @@ export default function Services() {
             windows, doors, and house siding.
           </p>
         </div>
-        <div className="serviceBlock">
+        <div
+          data-aos="flip-right"
+          data-aos-duration="5000"
+          data-aos-easing="ease-in-out"
+          className="serviceBlock"
+        >
           <i className="fas fa-plus"></i>
           <h1>And More</h1>
           <p>

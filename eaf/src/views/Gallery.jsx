@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Slider from "./Slider";
 import "../styling/gallery.scss";
 
