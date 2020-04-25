@@ -82,15 +82,24 @@ export default function Quote() {
           <h1>CONTACT US</h1>
           <div className="contactBlocks">
             <div className="contactBar">
-              <i className="fas fa-phone"></i>1 (111) 111-1111
+              <i className="fas fa-phone"></i>1 (603) 897 9776
             </div>
             <div className="contactBar">
               <i className="fas fa-at"></i>
-              eafremodelling@eaf.com
+              eafcustomdecks@yahoo.com
             </div>
             <div className="contactBar">
               <i className="fas fa-map-marked-alt"></i>
-              99 Address Ave., 01010 Nashua, NH
+              Nashua, NH
+            </div>
+            <div className="contactBar">
+              <a
+                a
+                target="_blank"
+                href="https://www.facebook.com/EAFCustomDecksandRemodeling/"
+              >
+                Check out our Facebook!
+              </a>
             </div>
           </div>
         </div>

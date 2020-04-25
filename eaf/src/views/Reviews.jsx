@@ -10,6 +10,7 @@ export default function Reviews() {
 
   return (
     <div className="reviewsBg">
+      <div id="invisReviewsMargin"></div>
       <div id="reviews">
         <h2 data-aos="fade-right">What our customers think of us:</h2>
         <div data-aos="fade-up" className="reviewBlocks">
@@ -56,7 +57,7 @@ export default function Reviews() {
               <p>
                 We researched 3 different companies to renovate our front and
                 back porch. We selected EAF because they were competitively
-                priced and every communication I had with them was extremely
+                priced and all communication I had with them was extremely
                 professional.
               </p>
               <i className="fas fa-quote-right bottomRight"></i>
